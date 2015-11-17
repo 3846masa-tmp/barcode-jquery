@@ -524,7 +524,7 @@
         var hasEnd = code.match(/[abcd]$/);
 
         // add start : A->D : arbitrary choose A
-        if (hasStart) result += this.encoding[16] + intercharacter;
+        if (!hasStart) result += this.encoding[16] + intercharacter;
 
         for(i=0; i<code.length; i++){
           index = table.indexOf( code.charAt(i) );
@@ -533,7 +533,7 @@
         }
 
         // add stop : A->D : arbitrary choose A
-        if (hasEnd) result += this.encoding[16];
+        if (!hasEnd) result += this.encoding[16];
         return(result);
       }
     },
